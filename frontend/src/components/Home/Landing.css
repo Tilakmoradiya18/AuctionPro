@@ -1,0 +1,103 @@
+/* src/components/Home/Landing.css */
+.landing-container {
+  min-height: 100vh;
+  background-color: #fef8f5;
+  color: #333;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.landing-banner {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 3rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.landing-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.landing-subtitle {
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+}
+
+.landing-buttons a {
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.landing-login {
+  /* background-color: #3b82f6; */
+  background-color: #edc37d;
+  color: white;
+}
+
+.landing-login:hover {
+  background-color: #dcb050;
+}
+
+.landing-register {
+  /* background-color: #10b981; */
+  background-color: #edc37d;
+  color: white;
+}
+
+.landing-register:hover {
+  background-color: #dcb050;
+}
+
+.landing-about {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.landing-about h2 {
+  font-size: 28px;
+  margin-bottom: 1rem;
+}
+
+.landing-about p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.landing-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.feature-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 280px;
+  text-align: center;
+  background-color: #fafafa;
+  transition: box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 14px;
+}

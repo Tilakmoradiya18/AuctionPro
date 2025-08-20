@@ -1,0 +1,76 @@
+/* Navbar container */
+.navbar {
+  background-color: #ffffff; /* Tailwind bg-gray-800 */
+  padding: 1rem; /* Tailwind p-4 */
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: black;
+  border-radius: 0.25rem;
+}
+
+/* Left links container */
+.navbar-links {
+  display: flex;
+  gap: 1.5rem; /* Tailwind gap-4 */
+}
+
+.navbar-links a {
+  color: black;
+  font-weight: 600;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
+}
+
+.navbar-links a:hover {
+  /* text-decoration: underline; */
+  color: #dca951;
+}
+
+/* Profile dropdown */
+.profile-group {
+  position: relative;
+}
+
+.profile-button {
+  background-color: #edc37d; /* Tailwind bg-gray-700 */
+  padding: 0.25rem 0.75rem; /* px-3 py-1 */
+  border-radius: 0.25rem; /* rounded */
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-weight:700;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  margin-top: 0.2rem; /* mt-2 */
+  background-color: white;
+  color: black;
+  border-radius: 0.25rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* hidden */
+}
+
+.profile-group:hover .profile-dropdown {
+  display: block; /* group-hover:block */
+}
+
+
+.profile-dropdown a,
+.profile-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem ; /* px-4 py-2 */
+  text-align: left;
+  background: none;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown button:hover {
+  background-color: #e5e7eb; /* Tailwind hover:bg-gray-200 */
+}
