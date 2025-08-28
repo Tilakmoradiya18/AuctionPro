@@ -47,6 +47,9 @@ const auctionSchema = new mongoose.Schema(
       ref: "User", // will be filled when auction completes
       default: null,
     },
+    is_expired: { 
+      type: Boolean, default: false 
+    },
   },
   { timestamps: true }
 );

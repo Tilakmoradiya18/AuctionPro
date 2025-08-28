@@ -9,6 +9,7 @@ import SetProfilePage from "./pages/setProfilePage";
 import ViewProfilePage from "./pages/ViewProfilePage";
 import UpdateProfilePage from "./pages/UpdateProfilePage";
 import CreateAuctionPage from "./pages/CreateAuctionPage";
+import BidPage from "./pages/BidPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/view-profile" element={<ViewProfilePage />} />
         <Route path="/update-profile" element={<UpdateProfilePage />} />
         <Route path="/create-auction" element={<CreateAuctionPage />} />
+        <Route path="/auction/:id" element={<BidPage />} />
       </Routes>
     </BrowserRouter>  
   );

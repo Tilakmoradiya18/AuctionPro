@@ -1,12 +1,10 @@
-/* General Page */
-.home-container {
+/* .home-container {
   padding: 20px;
   font-family: Arial, sans-serif;
   background-color: #fef8f5;
   min-height: 100vh;
 }
 
-/* Top Navigation */
 .top-nav {
   display: flex;
   justify-content: space-between;
@@ -23,7 +21,6 @@
   gap: 10px;
 }
 
-/* Buttons */
 .btn-primary,
 .btn-secondary,
 .btn-profile {
@@ -43,7 +40,6 @@
   background: #dcb050;
 }
 
-/* Dropdown Menu */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -73,17 +69,14 @@
   background-color: #f1f1f1;
 }
 
-/* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Welcome Section */
 .welcome-banner {
   padding-bottom: 10px;
 }
 
-/* Auction List */
 .auction-list {
   margin-top: 30px;
 }
@@ -100,4 +93,193 @@
   padding: 15px;
   width: 250px;
   background-color: #ffffff;
+}
+
+.auction-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.auction-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.auction-card img.auction-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+} */
+
+/* Container & Global */
+.home-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fef8f5;
+  min-height: 100vh;
+}
+
+/* Navbar / Top Navigation */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-profile {
+  background: #edc37d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-profile:hover {
+  background: #dcb050;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Welcome banner */
+.welcome-banner {
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Auction Section */
+.auction-list {
+  margin-top: 30px;
+}
+
+.auction-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Individual Auction Card */
+.auction-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Auction Image */
+.auction-card img.auction-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Auction Title & Info */
+.auction-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.auction-card p {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+/* Bid Button */
+.auction-card .btn-primary {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auction-items {
+    justify-content: center;
+  }
+
+  .auction-card {
+    width: 90%;
+  }
 }

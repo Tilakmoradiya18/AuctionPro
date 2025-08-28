@@ -1,51 +1,86 @@
-// src/pages/HomePageLoggedIn.jsx
-import React from "react";
-import "./HomeLoggedIn.css"; // Import external CSS
+
+import React, { useEffect, useState } from "react";
+import "./HomeLoggedIn.css"; 
 import Navbar from "../Navbar/Navbar";
+import API from "../../api"; // Your Axios instance
+import { useNavigate } from "react-router-dom";
 
 const HomePageLoggedIn = () => {
+  const [auctions, setAuctions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  // Fetch running auctions
+  const fetchAuctions = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const res = await API.get("/auction/running", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setAuctions(res.data.data);
+    } catch (err) {
+      console.error("Error fetching auctions:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchAuctions();
+  }, []);
+
+  // Function to calculate remaining time
+  const getRemainingTime = (endTime) => {
+    const now = new Date();
+    const end = new Date(endTime);
+    const diff = end - now;
+
+    if (diff <= 0) return "Expired";
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    return `${hours}h ${minutes}m ${seconds}s`;
+  };
+
+  // Navigate to bid page (or handle bid logic)
+  const handleBid = (auctionId) => {
+    navigate(`/auction/${auctionId}`); // example: open auction detail page
+  };
+
+  if (loading) return <p>Loading auctions...</p>;
+
   return (
     <div className="home-container">
-      {/* Top Navigation */}
-      {/* <nav className="top-nav">
-        <div className="nav-left">
-          <h2>AuctionPro</h2>
-        </div>
-        <div className="nav-right">
-          <button className="btn-primary">Live Auctions</button>
-          <button className="btn-secondary">Create Auction</button>
-          <button className="btn-primary">My Items</button> */}
+      <Navbar />
 
-          {/* Profile Dropdown */}
-          {/* <div className="dropdown">
-            <button className="btn-profile btn-primary">My Profile ▾</button>
-            <div className="dropdown-content">
-              <a href="/profile">View Profile</a>
-              <a href="/edit-profile">Edit Profile</a>
-              <a href="/logout">Logout</a>
-            </div>
-          </div>
-        </div>
-      </nav> */}
-
-      <Navbar/>
-
-
-      {/* Active Auctions */}
       <section className="auction-list">
         <h2>Active Auctions</h2>
-        <div className="auction-items">
-          <div className="auction-card">
-            <h3>Vintage Watch</h3>
-            <p>Current Bid: $120</p>
-            <button className="btn-primary">Bid Now</button>
+        {auctions.length === 0 ? (
+          <p>No active auctions currently.</p>
+        ) : (
+          <div className="auction-items">
+            {auctions.map((auction) => (
+              <div className="auction-card" key={auction._id}>
+                <img
+                  src={auction.images[0] || "/default-image.jpg"}
+                  alt={auction.title}
+                  className="auction-image"
+                />
+                <h3>{auction.title}</h3>
+                <p>Current Bid: ₹{auction.currentPrice}</p>
+                <p>Remaining Time: {getRemainingTime(auction.timeDuration)}</p>
+                <button
+                  className="btn-primary"
+                  onClick={() => handleBid(auction._id)}
+                >
+                  Bid Now
+                </button>
+              </div>
+            ))}
           </div>
-          <div className="auction-card">
-            <h3>Gaming Laptop</h3>
-            <p>Current Bid: $800</p>
-            <button className="btn-primary">Bid Now</button>
-          </div>
-        </div>
+        )}
       </section>
     </div>
   );

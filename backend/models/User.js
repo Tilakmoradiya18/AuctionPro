@@ -19,11 +19,11 @@ const userSchema = new mongoose.Schema(
     },
     fullname : {
       type: String,
-      required: true,
+      // required: true,
     },
     phone: {
       type: String,
-      required:true,
+      // required:true,
     },
     dob: {
       type: Date,
