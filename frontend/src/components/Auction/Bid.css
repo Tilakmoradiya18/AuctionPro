@@ -1,3 +1,4 @@
+
 .bid-container {
   display: flex;
   gap: 30px;
@@ -44,8 +45,10 @@
 }
 
 .bid-price,
+.bid-seller,
 .bid-starting,
-.bid-timer {
+.bid-timer,
+.bid-highest-bidder {
   font-size: 18px;
   margin: 6px 0;
 }
@@ -77,4 +80,75 @@
 
 .bid-button:hover {
   background: #dcb050;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-box {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px 25px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.popup-title {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.popup-message {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.popup-button {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-button {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+.confirm-button {
+  background-color: #facc15;
+  color: #000;
+  font-weight: bold;
+}
+
+.confirm-button:hover {
+  background-color: #e5b80f;
 }

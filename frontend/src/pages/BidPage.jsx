@@ -5,7 +5,7 @@ const BidPage = () => {
   // Now only renders Bid component
   return(
     <div>
-        <Bid />;
+        <Bid />
     </div>
   ) 
 };

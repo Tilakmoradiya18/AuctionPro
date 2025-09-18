@@ -5,7 +5,7 @@ const upload = require("../middleware/upload");
 const authMiddleware = require("../middleware/authMiddleware"); // JWT auth
 
 router.post("/create",authMiddleware,upload.array("images", 5), createAuction);
-router.get("/running", getRunningAuctions);
+router.get("/running",authMiddleware,getRunningAuctions);
 router.get("/:id", getAuctionById);
 
 module.exports = router;

@@ -10,6 +10,8 @@ import ViewProfilePage from "./pages/ViewProfilePage";
 import UpdateProfilePage from "./pages/UpdateProfilePage";
 import CreateAuctionPage from "./pages/CreateAuctionPage";
 import BidPage from "./pages/BidPage";
+import ActivityPage from "./pages/activityPage";
+import ItemPage from "./pages/itemPage";
 
 function App() {
   return (
@@ -17,7 +19,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/homeLoggedIn" element={<HomePageLoggedIn/>}/>
-        {/* <Route path="/" element={isLoggedIn ? <HomePageLoggedIn /> : <HomePage />} /> */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
@@ -27,6 +28,8 @@ function App() {
         <Route path="/update-profile" element={<UpdateProfilePage />} />
         <Route path="/create-auction" element={<CreateAuctionPage />} />
         <Route path="/auction/:id" element={<BidPage />} />
+        <Route path="/my-activity" element={<ActivityPage />} />
+        <Route path="/my-items" element={<ItemPage />} />
       </Routes>
     </BrowserRouter>  
   );

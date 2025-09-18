@@ -30,7 +30,7 @@ const auctionSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["running", "completed"],
+      enum: ["running", "completed","unsold"],
       default: "running",
     },
     sellerId: {

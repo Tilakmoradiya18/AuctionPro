@@ -33,7 +33,8 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-links">
-        <Link to="/">Live Auctions</Link>
+        <Link to="/homeLoggedIn">Home</Link>
+        <Link to="/my-activity">My Activity</Link>
         <Link to="/create-auction">Create Auction</Link>
         <Link to="/my-items">My Items</Link>
       </div>
